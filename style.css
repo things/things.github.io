@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0
+}
+.mmm{
+    float: left;
+    height: 75px;
+    width: 235px;
+    font-family: Veranda;
+}
+.heading {
+  float:right;
+}
