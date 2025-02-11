@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distant's Website</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .content {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 2rem;
+            width: 300px;
+            display: none;
+        }
+        .content h1 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+        .content a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .content a img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay" onclick="startSite()">Click</div>
+    <audio id="bgm" loop>
+        <source src="data/bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="content" id="content">
+        <h1>distant's website!!</h1>
+        <a href="https://www.youtube.com/channel/UC9khHrByNQ_QXdqd2-718_Q" target="_blank">
+            <img src="data/yt.png" alt="YouTube Icon"> YouTube
+        </a>
+        <a href="https://www.last.fm/user/outlie" target="_blank">
+            <img src="data/lfm.png" alt="Last.fm Icon"> Last.fm
+        </a>
+        <a href="https://discord.com/users/955460407114493962" target="_blank">
+        <img src="data/dc.png" alt="Discord Icon"> Discord
+        </a>
+        <a href="https://tiktok.com/@outlie" target="_blank">
+        <img src="data/tt.png" alt="Discord Icon"> TikTok
+        </a>
+        <a href="https://www.steamcommunity.com/id/disorient" target="_blank">
+        <img src="data/steam.png" alt="Steam Icon"> Steam
+        </a>
+    </div>
+    <script>
+        function startSite() {
+            document.getElementById("overlay").classList.add("hidden");
+            document.body.style.background = "url('data/bg.png') no-repeat center center fixed";
+            document.body.style.backgroundSize = "cover";
+            document.getElementById("content").style.display = "block";
+            const audio = document.getElementById("bgm");
+            audio.play().catch(error => console.log("Playback failed: ", error));
+        }
+    </script>
+</body>
+</html>
